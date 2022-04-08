@@ -2,16 +2,23 @@ import {React,useState} from "react";
 
 const Statistics = ({data}) => {
     const [good,neutral,bad,all,average,positive] = data
-    return (
-        <div>
-            <p>good {good}</p>
-            <p>neutral {neutral}</p>
-            <p>bad {neutral}</p>
-            <p>all {all}</p>
-            <p>average {average}</p>
-            <p>positive {positive} %</p>
-        </div>
-    )
+    if (all!=0){
+        return (
+            <div>
+                <p>good {good}</p>
+                <p>neutral {neutral}</p>
+                <p>bad {neutral}</p>
+                <p>all {all}</p>
+                <p>average {average}</p>
+                <p>positive {positive} %</p>
+            </div>
+        )
+    }
+    else {
+        return(
+            <p>No feedback given</p>
+        )
+    }
 }
 
 const App = () =>{
